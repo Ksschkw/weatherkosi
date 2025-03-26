@@ -1,3 +1,4 @@
+const WEATHER = "f38d23efd7154af9aa1162039252603"
 async function searchWeather(city = null) {
     const cityInput = city || document.getElementById('cityInput').value;
     if (!cityInput) return;
@@ -5,7 +6,7 @@ async function searchWeather(city = null) {
     try {
         // Fetch current weather + 3-day forecast
         const response = await fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityInput}&days=3`
+            `https://api.weatherapi.com/v1/forecast.json?key=${WEATHER}&q=${cityInput}&days=3`
         );
         const data = await response.json();
 

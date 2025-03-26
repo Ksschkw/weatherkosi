@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WeatherKosi 🌦️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="neon">WeatherKosi</h1>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Search city...">
+                <button onclick="searchWeather()">🔍</button>
+            </div>
+        </header>
+
+        <!-- Current Weather -->
+        <div class="card current-weather">
+            <div id="currentWeather"></div>
+        </div>
+
+        <!-- Forecast -->
+        <div class="card">
+            <h2>🌍 5-Day Forecast</h2>
+            <div id="forecast"></div>
+        </div>
+
+        <!-- Quick Cities (Europe/Africa) -->
+        <div class="card cities">
+            <h2>Quick Cities</h2>
+            <div class="city-buttons">
+                <button onclick="searchWeather('London')">London</button>
+                <button onclick="searchWeather('Lagos')">Lagos</button>
+                <button onclick="searchWeather('Paris')">Paris</button>
+                <button onclick="searchWeather('Nairobi')">Nairobi</button>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+:root {
+    --neon-blue: #00f3ff;
+    --silver: #c0c0c0;
+    --dark-bg: #0a0a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--silver);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.neon {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from { text-shadow: 0 0 5px var(--neon-blue); }
+    to { text-shadow: 0 0 20px var(--neon-blue); }
+}
+
+.card {
+    background: rgba(10, 10, 26, 0.8);
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 10px;
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--neon-blue);
+    color: var(--silver);
+    border-radius: 5px;
+}
+
+button {
+    background: rgba(0, 243, 255, 0.2);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.current-weather {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#forecast {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.city-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* ----- Media Queries ----- */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    #forecast {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .city-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .current-weather {
+        font-size: 1em;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #forecast {
+        grid-template-columns: 1fr;
+    }
+
+    .neon {
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .current-weather img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #forecast .forecast-day img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .city-buttons button {
+        padding: 6px 12px;
+    }
+}
